@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>jQuery: a list</title>
+<form id="add">
+  <input id="title" aria-label="New item">
+  <button>Add</button>
+</form>
+<ul id="items"></ul>
+<p id="count">0 items</p>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+  $(function () {
+    var count = 0; // the state lives here and in the DOM; you keep them in sync
+
+    $('#add').on('submit', function (event) {
+      event.preventDefault();
+      var title = $('#title').val().trim();
+      if (!title) return;
+      $('<li>').text(title).appendTo('#items');
+      count += 1;
+      $('#count').text(count + (count === 1 ? ' item' : ' items'));
+      $('#title').val('');
+    });
+  });
+</script>

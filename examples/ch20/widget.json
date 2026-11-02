@@ -1,0 +1,13 @@
+{
+  "name": "Embeddable widget: a booking form other sites paste in with one <script> tag",
+  "maxBaselineKb": 25,
+  "weights": { "size": 5, "isolation": 4, "longevity": 3, "team": 2, "ecosystem": 1 },
+  "scores": {
+    "react":  { "size": 1, "isolation": 2, "longevity": 5, "team": 5, "ecosystem": 5 },
+    "preact": { "size": 4, "isolation": 2, "longevity": 4, "team": 4, "ecosystem": 3 },
+    "svelte": { "size": 4, "isolation": 3, "longevity": 4, "team": 3, "ecosystem": 3 },
+    "solid":  { "size": 5, "isolation": 2, "longevity": 3, "team": 3, "ecosystem": 2 },
+    "lit":    { "size": 5, "isolation": 5, "longevity": 4, "team": 3, "ecosystem": 3 },
+    "vanjs":  { "size": 5, "isolation": 2, "longevity": 2, "team": 2, "ecosystem": 1 }
+  }
+}

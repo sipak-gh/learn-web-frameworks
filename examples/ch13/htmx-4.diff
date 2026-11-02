@@ -1,0 +1,22 @@
+--- a/tasklet/htmx/package.json
++++ b/tasklet/htmx/package.json
+@@ -9,7 +9,7 @@
+     "serve": "node src/server.ts"
+   },
+   "dependencies": {
+-    "htmx.org": "2.0.11"
++    "htmx.org": "4.0.1"
+   },
+   "devDependencies": {
+     "@types/node": "26.6.6",
+--- a/tasklet/htmx/src/views.ts
++++ b/tasklet/htmx/src/views.ts
+@@ -48,7 +48,7 @@
+ export function taskForm(): Html {
+   return html`<form aria-label="Add task" class="add" method="post" action="/tasks"
+         hx-post="/tasks" hx-include="#current-filter" hx-target="#task-list" hx-swap="innerHTML"
+-        hx-on::config-request="this.reset()">
++        hx-on::config:request="this.reset()">
+         <label for="new-task">New task</label>
+         <input id="new-task" name="title" autocomplete="off">
+         <button type="submit">Add</button>

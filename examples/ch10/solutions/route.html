@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mithril routes</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../node_modules/mithril/mithril.js"></script>
+    <script>
+      const tasks = [
+        { id: '1', title: 'Write the outline', done: true },
+        { id: '2', title: 'Draft chapter 10', done: false },
+        { id: '3', title: 'Run the tests', done: false },
+      ]
+      const FILTERS = ['all', 'active', 'done']
+
+      // The route parameter arrives as an attribute, like any other.
+      const TaskList = {
+        view: ({ attrs: { filter } }) => [
+          m(
+            'nav',
+            FILTERS.map((name) =>
+              m(
+                m.route.Link,
+                { href: `/${name}`, 'aria-current': name === filter ? 'page' : undefined },
+                name,
+              ),
+            ),
+          ),
+          m(
+            'ul',
+            tasks
+              .filter((task) => filter === 'all' || (filter === 'done') === task.done)
+              .map((task) => m('li', { key: task.id }, task.title)),
+          ),
+        ],
+      }
+
+      // A route resolver: onmatch picks the component, or redirects.
+      m.route(document.getElementById('app'), '/all', {
+        '/:filter': {
+          onmatch: ({ filter }) => (FILTERS.includes(filter) ? TaskList : m.route.set('/all')),
+        },
+      })
+    </script>
+  </body>
+</html>

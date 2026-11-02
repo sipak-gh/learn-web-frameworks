@@ -1,0 +1,8 @@
+{
+  "name": "Mithril",
+  "port": 4308,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

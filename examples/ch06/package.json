@@ -1,0 +1,13 @@
+{
+  "name": "ch06-svelte-examples",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "compile": "node compile.mjs Counter.svelte",
+    "migrate": "node migrate.mjs legacy/TaskItem.svelte"
+  },
+  "dependencies": {
+    "svelte": "5.57.3"
+  }
+}

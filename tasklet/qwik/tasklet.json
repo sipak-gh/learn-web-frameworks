@@ -1,0 +1,8 @@
+{
+  "name": "Qwik",
+  "port": 4310,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

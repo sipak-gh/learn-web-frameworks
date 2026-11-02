@@ -1,0 +1,17 @@
+{
+  "name": "ch13-htmx-examples",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc",
+    "search": "node active-search/server.ts"
+  },
+  "dependencies": {
+    "htmx.org": "2.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ch15-signals",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc",
+    "start": "node serve.ts"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "signal-polyfill": "0.2.2",
+    "typescript": "7.0.2"
+  }
+}

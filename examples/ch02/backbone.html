@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Backbone: a list</title>
+<div id="app">
+  <form>
+    <input aria-label="New item">
+    <button>Add</button>
+  </form>
+  <ul></ul>
+  <p></p>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/underscore/underscore-umd-min.js"></script>
+<script src="node_modules/backbone/backbone-min.js"></script>
+<script>
+  var Item = Backbone.Model.extend({ defaults: { title: '' } });
+  var Items = Backbone.Collection.extend({ model: Item });
+
+  var ListView = Backbone.View.extend({
+    events: { 'submit form': 'add' },
+    itemTemplate: _.template('<li><%- title %></li>'),
+
+    initialize: function () {
+      this.listenTo(this.collection, 'add', this.render); // model events drive the view
+      this.render();
+    },
+
+    add: function (event) {
+      event.preventDefault();
+      var input = this.$('input');
+      var title = input.val().trim();
+      if (!title) return;
+      this.collection.add({ title: title });
+      input.val('');
+    },
+
+    render: function () {
+      var n = this.collection.length;
+      this.$('ul').html(this.collection.map(function (item) {
+        return this.itemTemplate(item.toJSON());
+      }, this).join(''));
+      this.$('p').text(n + (n === 1 ? ' item' : ' items'));
+      return this;
+    }
+  });
+
+  new ListView({ el: '#app', collection: new Items() });
+</script>

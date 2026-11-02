@@ -1,0 +1,12 @@
+{
+  "name": "ch08-reactivity",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ownership": "node --conditions=browser ownership.mjs",
+    "batching": "node --conditions=browser batching.mjs"
+  },
+  "dependencies": {
+    "solid-js": "1.9.18"
+  }
+}

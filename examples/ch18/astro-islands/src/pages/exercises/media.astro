@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import SvelteCounter from '../../components/SvelteCounter.svelte';
+---
+
+<Base title="client:media">
+  <section class="card" aria-labelledby="svelte-media">
+    <h2 id="svelte-media">Svelte, <code>client:media</code></h2>
+    <SvelteCounter client:media="(max-width: 600px)" start={50} />
+  </section>
+</Base>

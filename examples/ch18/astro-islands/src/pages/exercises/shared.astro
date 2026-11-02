@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import SharedReact from '../../components/react/SharedReact.tsx';
+import SharedSvelte from '../../components/SharedSvelte.svelte';
+---
+
+<Base title="Shared state">
+  <p>Two islands, two frameworks, one count.</p>
+  <SharedReact client:load />
+  <SharedSvelte client:load />
+</Base>

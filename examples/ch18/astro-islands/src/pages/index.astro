@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import BuildInfo from '../components/BuildInfo.astro';
+import ReactCounter from '../components/react/ReactCounter.tsx';
+import SolidCounter from '../components/solid/SolidCounter.tsx';
+import SvelteCounter from '../components/SvelteCounter.svelte';
+import VueCounter from '../components/VueCounter.vue';
+---
+
+<Base title="Islands">
+  <p>This page is static HTML. Only the islands below load JavaScript.</p>
+
+  <BuildInfo />
+
+  <section class="card" aria-labelledby="react-static">
+    <h2 id="react-static">Server-only: React, no directive</h2>
+    <ReactCounter start={10} />
+  </section>
+
+  <section class="card" aria-labelledby="react-load">
+    <h2 id="react-load">React, <code>client:load</code></h2>
+    <ReactCounter client:load start={10} />
+  </section>
+
+  <section class="card" aria-labelledby="svelte-idle">
+    <h2 id="svelte-idle">Svelte, <code>client:idle</code></h2>
+    <SvelteCounter client:idle start={20} />
+  </section>
+
+  <section class="card" aria-labelledby="solid-only">
+    <h2 id="solid-only">Solid, <code>client:only</code></h2>
+    <SolidCounter client:only="solid-js" start={30} />
+  </section>
+
+  <p class="spacer">Scroll down: the Vue island loads when it comes into view.</p>
+
+  <section class="card" aria-labelledby="vue-visible">
+    <h2 id="vue-visible">Vue, <code>client:visible</code></h2>
+    <VueCounter client:visible start={40} />
+  </section>
+</Base>

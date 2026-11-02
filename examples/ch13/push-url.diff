@@ -1,0 +1,11 @@
+--- a/tasklet/htmx/src/views.ts
++++ b/tasklet/htmx/src/views.ts
+@@ -62,7 +62,7 @@
+         <input type="hidden" id="current-filter" name="filter" value="${current}">${FILTERS.map(
+           ({ value, label }) => html`
+         <button type="button" id="filter-${value}" aria-pressed="${value === current}"
+-          hx-get="/?filter=${value}" hx-target="#task-list" hx-swap="innerHTML">${label}</button>`,
++          hx-get="/?filter=${value}" hx-push-url="true" hx-target="#task-list" hx-swap="innerHTML">${label}</button>`,
+         )}
+       </div>`
+ }

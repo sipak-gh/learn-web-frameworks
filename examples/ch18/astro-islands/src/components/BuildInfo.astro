@@ -1,0 +1,21 @@
+---
+// Runs at build time only (it reads files with Node's fs); none of it reaches the browser.
+import { readFile } from 'node:fs/promises';
+
+const names = ['astro', 'react', 'svelte', 'vue', 'solid-js'];
+const versions = await Promise.all(
+  names.map(async (name) => {
+    const pkg = JSON.parse(await readFile(`node_modules/${name}/package.json`, 'utf8'));
+    return { name, version: pkg.version as string };
+  }),
+);
+const builtAt = new Date().toISOString();
+---
+
+<section class="card" aria-labelledby="build-info">
+  <h2 id="build-info">Server-only: an Astro component</h2>
+  <p>Built at <time datetime={builtAt}>{builtAt}</time> with:</p>
+  <ul>
+    {versions.map(({ name, version }) => <li><code>{name}</code> {version}</li>)}
+  </ul>
+</section>

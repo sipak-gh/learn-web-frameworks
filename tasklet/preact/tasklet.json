@@ -1,0 +1,8 @@
+{
+  "name": "Preact",
+  "port": 4307,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

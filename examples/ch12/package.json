@@ -1,0 +1,13 @@
+{
+  "name": "ch12-web-components-examples",
+  "private": true,
+  "type": "module",
+  "description": "A custom element with no library, checked in headless Chromium",
+  "scripts": {
+    "verify": "node verify-toggle-chip.mjs",
+    "verify:solutions": "node verify-solutions.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

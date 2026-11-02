@@ -1,0 +1,8 @@
+{
+  "name": "ssr-vs-csr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}

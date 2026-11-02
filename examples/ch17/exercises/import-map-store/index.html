@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Import map with a store</title>
+    <!-- nanostores reads process.env.NODE_ENV, which bundlers replace. Without one, define it. -->
+    <script>
+      globalThis.process = { env: { NODE_ENV: 'production' } }
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "nanostores": "/node_modules/nanostores/index.js"
+        }
+      }
+    </script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <output id="total">$0.00</output>
+    <button type="button" id="add">Add $2.50</button>
+  </body>
+</html>

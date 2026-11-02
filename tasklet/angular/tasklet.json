@@ -1,0 +1,8 @@
+{
+  "name": "Angular",
+  "port": 4305,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

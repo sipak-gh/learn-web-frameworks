@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No build step</title>
+    <!-- Maps bare specifiers ("preact") to URLs. Must come before any module script. -->
+    <script type="importmap">
+      {
+        "imports": {
+          "preact": "/node_modules/preact/dist/preact.mjs",
+          "preact/hooks": "/node_modules/preact/hooks/dist/hooks.mjs",
+          "htm": "/node_modules/htm/dist/htm.mjs",
+          "htm/preact": "/node_modules/htm/preact/index.mjs"
+        }
+      }
+    </script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

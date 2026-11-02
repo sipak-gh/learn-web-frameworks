@@ -1,0 +1,20 @@
+{
+	"name": "tasklet-preact",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --port 4307 --strictPort",
+		"build": "tsc && vite build",
+		"preview": "vite preview --port 4307 --strictPort"
+	},
+	"dependencies": {
+		"@preact/signals": "2.11.4",
+		"preact": "11.1.1"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "2.10.6",
+		"typescript": "7.0.2",
+		"vite": "8.3.5"
+	}
+}

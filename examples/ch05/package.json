@@ -1,0 +1,13 @@
+{
+  "name": "ch05-vue-examples",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "reactivity": "node reactivity.ts",
+    "proxy": "node proxy.ts"
+  },
+  "dependencies": {
+    "vue": "3.5.44"
+  }
+}

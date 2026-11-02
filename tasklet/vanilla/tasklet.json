@@ -1,0 +1,8 @@
+{
+  "name": "Vanilla TypeScript",
+  "port": 4301,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

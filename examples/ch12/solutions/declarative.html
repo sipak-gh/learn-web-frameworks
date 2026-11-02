@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Declarative Shadow DOM</title>
+    <style>
+      p {
+        color: rgb(180, 35, 24);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- No script anywhere: the parser attaches the shadow root. -->
+    <task-card>
+      <template shadowrootmode="open">
+        <style>
+          p {
+            color: rgb(47, 91, 211);
+          }
+        </style>
+        <p><slot></slot></p>
+      </template>
+      Rendered on the server, styled inside its own shadow root.
+    </task-card>
+    <p>A page paragraph.</p>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "ch19-comparing-frameworks-examples",
+  "private": true,
+  "type": "module",
+  "description": "Measurements for Chapter 19: first-load bytes in a real browser, npm download averages, line counts",
+  "scripts": {
+    "first-load": "node first-load.mjs",
+    "downloads": "node downloads.mjs",
+    "count-lines": "node count-lines.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

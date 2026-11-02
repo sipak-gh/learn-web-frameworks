@@ -1,0 +1,11 @@
+<div role="group" aria-label="Filter" class="filters">
+  @for (option of filters; track option.value) {
+    <button
+      type="button"
+      [attr.aria-pressed]="option.value === filter()"
+      (click)="filter.set(option.value)"
+    >
+      {{ option.label }}
+    </button>
+  }
+</div>

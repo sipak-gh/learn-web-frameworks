@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mithril lifecycle</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <pre id="log"></pre>
+    <script src="node_modules/mithril/mithril.js"></script>
+    <script>
+      // Written straight to the DOM, so logging never causes a redraw.
+      const write = (line) => (document.getElementById('log').textContent += `${line}\n`)
+
+      const Item = {
+        oninit: ({ attrs }) => write(`oninit ${attrs.name}`),
+        oncreate: ({ attrs }) => write(`oncreate ${attrs.name}`),
+        onbeforeupdate: ({ attrs }) => write(`onbeforeupdate ${attrs.name}`),
+        onupdate: ({ attrs }) => write(`onupdate ${attrs.name}`),
+        onbeforeremove: ({ attrs }) => {
+          write(`onbeforeremove ${attrs.name}`)
+          // Mithril keeps the element in the page until this promise settles.
+          return new Promise((resolve) => setTimeout(resolve, 300))
+        },
+        onremove: ({ attrs }) => write(`onremove ${attrs.name}`),
+        view: ({ attrs }) => m('li', attrs.name),
+      }
+
+      function App() {
+        let shown = true
+        return {
+          view: () => [
+            m('button', { type: 'button', onclick: () => (shown = !shown) }, 'Toggle'),
+            m('button', { type: 'button', onclick: () => {} }, 'Redraw'),
+            m('ul', shown && m(Item, { name: 'item' })),
+          ],
+        }
+      }
+
+      m.mount(document.getElementById('app'), App)
+    </script>
+  </body>
+</html>

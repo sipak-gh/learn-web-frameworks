@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>VanJS list, core only</title>
+    <script type="importmap">
+      { "imports": { "vanjs-core": "../node_modules/vanjs-core/src/van.js" } }
+    </script>
+  </head>
+  <body>
+    <script type="module">
+      import van from 'vanjs-core'
+
+      const { input, label, li, main, span, ul } = van.tags
+
+      // One state holding the whole array: replace it to change anything.
+      const tasks = van.state([
+        { id: '1', title: 'Write the outline', done: true },
+        { id: '2', title: 'Draft chapter 10', done: false },
+        { id: '3', title: 'Run the tests', done: false },
+      ])
+
+      function toggle(id) {
+        tasks.val = tasks.val.map((task) => (task.id === id ? { ...task, done: !task.done } : task))
+      }
+
+      const TaskItem = (task) =>
+        li(
+          { class: task.done ? 'task done' : 'task' },
+          label(
+            input({ type: 'checkbox', checked: task.done, onchange: () => toggle(task.id) }),
+            ' ',
+            span(task.title),
+          ),
+        )
+
+      // The binding function reads tasks.val, so any change rebuilds the whole <ul>.
+      van.add(document.body, main(() => ul(tasks.val.map(TaskItem))))
+    </script>
+  </body>
+</html>

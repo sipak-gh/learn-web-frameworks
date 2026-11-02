@@ -1,0 +1,11 @@
+{
+  "name": "Storefront: product pages found through search, most visitors on phones, a team of four who know Vue",
+  "weights": { "ssr": 5, "mobile": 4, "ecosystem": 3, "hiring": 3, "team": 2 },
+  "scores": {
+    "react":  { "ssr": 5, "mobile": 2, "ecosystem": 5, "hiring": 5, "team": 3 },
+    "vue":    { "ssr": 5, "mobile": 3, "ecosystem": 4, "hiring": 4, "team": 5 },
+    "svelte": { "ssr": 5, "mobile": 4, "ecosystem": 3, "hiring": 3, "team": 3 },
+    "qwik":   { "ssr": 5, "mobile": 5, "ecosystem": 2, "hiring": 1, "team": 2 },
+    "solid":  { "ssr": 4, "mobile": 4, "ecosystem": 2, "hiring": 2, "team": 3 }
+  }
+}

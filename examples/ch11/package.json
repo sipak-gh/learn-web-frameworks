@@ -1,0 +1,14 @@
+{
+  "name": "ch11-qwik-examples",
+  "private": true,
+  "type": "module",
+  "description": "Run Qwik's optimizer and server renderer on single components, without a project",
+  "scripts": {
+    "optimize": "node optimize.mjs",
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.20.3",
+    "vite": "7.3.1"
+  }
+}

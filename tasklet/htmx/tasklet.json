@@ -1,0 +1,15 @@
+{
+  "name": "htmx",
+  "port": 4312,
+  "build": "npm run build",
+  "serve": "npm run serve",
+  "persistence": "server",
+  "skip": [
+    { "test": "shows \"Loading tasks…\" while tasks.json loads, then the seed tasks", "reason": "The server renders the tasks into the page; there is no client-side fetch or loading state." },
+    { "test": "shows an error for a failed response and Retry loads the tasks", "reason": "No client-side fetch of tasks.json: the server reads it once at startup." },
+    { "test": "shows the error for a network failure too", "reason": "No client-side fetch of tasks.json: the server reads it once at startup." },
+    { "test": "saves the list to localStorage after every change", "reason": "Tasks persist on the server (in memory), not in localStorage." },
+    { "test": "uses tasks saved in localStorage without fetching tasks.json", "reason": "Tasks persist on the server (in memory), not in localStorage." },
+    { "test": "ignores invalid saved data and fetches tasks.json", "reason": "Tasks persist on the server (in memory), not in localStorage." }
+  ]
+}

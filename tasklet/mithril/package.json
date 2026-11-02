@@ -1,0 +1,17 @@
+{
+  "name": "tasklet-mithril",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4308 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 4308 --strictPort"
+  },
+  "dependencies": {
+    "mithril": "2.3.8"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}

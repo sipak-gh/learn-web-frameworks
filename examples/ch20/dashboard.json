@@ -1,0 +1,11 @@
+{
+  "name": "SaaS dashboard: eight developers who know React, many forms and tables, behind a login",
+  "weights": { "team": 5, "ecosystem": 4, "hiring": 4, "longevity": 3, "typescript": 3, "size": 1 },
+  "scores": {
+    "react":   { "team": 5, "ecosystem": 5, "hiring": 5, "longevity": 5, "typescript": 5, "size": 2 },
+    "vue":     { "team": 2, "ecosystem": 4, "hiring": 4, "longevity": 4, "typescript": 4, "size": 4 },
+    "angular": { "team": 1, "ecosystem": 4, "hiring": 4, "longevity": 5, "typescript": 5, "size": 2 },
+    "svelte":  { "team": 2, "ecosystem": 3, "hiring": 3, "longevity": 4, "typescript": 4, "size": 4 },
+    "solid":   { "team": 3, "ecosystem": 2, "hiring": 2, "longevity": 3, "typescript": 5, "size": 5 }
+  }
+}

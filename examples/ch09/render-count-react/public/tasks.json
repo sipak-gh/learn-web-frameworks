@@ -1,0 +1,5 @@
+[
+  { "id": "1", "title": "Read the Vue chapter", "done": false },
+  { "id": "2", "title": "Try Svelte runes", "done": false },
+  { "id": "3", "title": "Write a signal from scratch", "done": true }
+]

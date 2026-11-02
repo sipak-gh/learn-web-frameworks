@@ -1,0 +1,34 @@
+<main class="tasklet">
+  <h1>Tasklet</h1>
+  <p class="uptime">Open for {{ seconds() }} s</p>
+  <app-task-form (add)="store.add($event)" />
+  <app-filter-bar [(filter)]="filter" />
+
+  @if (store.loading()) {
+    <p role="status">Loading tasks…</p>
+  } @else if (store.failed()) {
+    <p role="alert">Couldn't load tasks.</p>
+    <button type="button" (click)="store.retry()">Retry</button>
+  } @else if (store.tasks()) {
+    @if (visible().length === 0) {
+      <p class="empty">Nothing to show.</p>
+    } @else {
+      <ul class="tasks" aria-label="Tasks">
+        @for (task of visible(); track task.id) {
+          <li
+            app-task-item
+            [task]="task"
+            (toggle)="store.toggle(task.id)"
+            (remove)="store.remove(task.id)"
+          ></li>
+        }
+      </ul>
+    }
+    <footer class="footer">
+      <p class="count" aria-live="polite">{{ countLabel() }}</p>
+      <button type="button" class="clear" [disabled]="!anyDone()" (click)="store.clearDone()">
+        Clear done
+      </button>
+    </footer>
+  }
+</main>

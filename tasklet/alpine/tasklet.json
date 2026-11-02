@@ -1,0 +1,8 @@
+{
+  "name": "Alpine.js",
+  "port": 4313,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

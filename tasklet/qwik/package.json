@@ -1,0 +1,40 @@
+{
+  "name": "tasklet-qwik",
+  "description": "Tasklet in Qwik (Qwik City, static site generation)",
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.server": "qwik check-client src dist && vite build -c adapters/static/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo \"Deploy the static files in dist/ to any static host\"",
+    "dev": "vite --mode ssr --port 4310 --strictPort",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "vite preview --config vite.preview.config.ts",
+    "start": "vite --open --mode ssr --port 4310 --strictPort",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "1.20.3",
+    "@builder.io/qwik-city": "1.20.3",
+    "@eslint/js": "9.39.5",
+    "@types/node": "20.19.0",
+    "eslint": "9.32.0",
+    "eslint-plugin-qwik": "1.20.3",
+    "globals": "16.4.0",
+    "prettier": "3.6.2",
+    "typescript": "5.4.5",
+    "typescript-eslint": "8.38.0",
+    "undici": "8.12.3",
+    "vite": "7.3.1",
+    "vite-tsconfig-paths": "4.3.2"
+  }
+}

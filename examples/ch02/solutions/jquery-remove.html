@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>jQuery: a list with Remove</title>
+<form id="add">
+  <input id="title" aria-label="New item">
+  <button>Add</button>
+</form>
+<ul id="items"></ul>
+<p id="count">0 items</p>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+  $(function () {
+    function updateCount() { // the count is derived, but you must remember to call this
+      var n = $('#items li').length;
+      $('#count').text(n + (n === 1 ? ' item' : ' items'));
+    }
+
+    $('#add').on('submit', function (event) {
+      event.preventDefault();
+      var title = $('#title').val().trim();
+      if (!title) return;
+      var remove = $('<button type="button">Remove</button>').attr('aria-label', 'Remove ' + title);
+      $('<li>').append($('<span>').text(title), ' ', remove).appendTo('#items');
+      updateCount();
+      $('#title').val('');
+    });
+
+    // One delegated handler covers items that do not exist yet.
+    $('#items').on('click', 'button', function () {
+      $(this).closest('li').remove();
+      updateCount();
+    });
+  });
+</script>

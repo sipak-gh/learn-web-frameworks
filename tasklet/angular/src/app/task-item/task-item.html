@@ -1,0 +1,7 @@
+<label>
+  <input type="checkbox" [checked]="task().done" (change)="toggle.emit()" />
+  <span>{{ task().title }}</span>
+</label>
+<button type="button" class="delete" [attr.aria-label]="deleteLabel()" (click)="remove.emit()">
+  ×
+</button>

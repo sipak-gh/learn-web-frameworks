@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Knockout: a list with Remove</title>
+<form data-bind="submit: add">
+  <input aria-label="New item" data-bind="textInput: title">
+  <button>Add</button>
+</form>
+<ul data-bind="foreach: items">
+  <li>
+    <span data-bind="text: $data"></span>
+    <button type="button" data-bind="click: $parent.remove, attr: { 'aria-label': 'Remove ' + $data }">Remove</button>
+  </li>
+</ul>
+<p data-bind="text: countText"></p>
+<script src="../node_modules/knockout/build/output/knockout-latest.js"></script>
+<script>
+  function ListViewModel() {
+    var self = this;
+    self.title = ko.observable('');
+    self.items = ko.observableArray([]);
+    self.countText = ko.computed(function () {
+      var n = self.items().length;
+      return n + (n === 1 ? ' item' : ' items');
+    });
+    self.add = function () {
+      var title = self.title().trim();
+      if (!title) return;
+      self.items.push(title);
+      self.title('');
+    };
+    self.remove = function (item) { // Knockout passes the clicked item; countText follows by itself
+      self.items.remove(item);
+    };
+  }
+
+  ko.applyBindings(new ListViewModel());
+</script>

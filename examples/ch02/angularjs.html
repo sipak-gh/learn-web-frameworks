@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="demo">
+<meta charset="utf-8">
+<title>AngularJS: a list</title>
+<div ng-controller="ListController">
+  <form ng-submit="add()">
+    <input aria-label="New item" ng-model="title">
+    <button>Add</button>
+  </form>
+  <ul>
+    <li ng-repeat="item in items track by $index">{{item}}</li>
+  </ul>
+  <p>{{items.length}} {{items.length === 1 ? 'item' : 'items'}}</p>
+</div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+  angular.module('demo', []).controller('ListController', function ($scope) {
+    $scope.title = '';
+    $scope.items = [];
+    $scope.add = function () { // after this runs, a digest re-checks every {{binding}}
+      var title = $scope.title.trim();
+      if (!title) return;
+      $scope.items.push(title);
+      $scope.title = '';
+    };
+  });
+</script>

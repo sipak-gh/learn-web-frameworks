@@ -1,0 +1,17 @@
+{
+  "name": "tasklet-alpine",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4313 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 4313 --strictPort"
+  },
+  "dependencies": {
+    "alpinejs": "3.17.5"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}

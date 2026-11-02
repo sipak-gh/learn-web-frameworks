@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>toggle-chip</title>
+    <style>
+      /* Page styles: they style the page's button, not the chips' buttons. */
+      button {
+        background: hotpink;
+      }
+      /* ::part() is the one door the chip opens for outside styling. */
+      toggle-chip.big::part(button) {
+        font-size: 1.25rem;
+      }
+    </style>
+    <script src="toggle-chip.js" defer></script>
+  </head>
+  <body>
+    <p>
+      <toggle-chip id="signal">Write a signal <span slot="hint">5 min</span></toggle-chip>
+      <toggle-chip id="vue" class="big" pressed>Read the Vue chapter</toggle-chip>
+      <toggle-chip id="empty"></toggle-chip>
+    </p>
+    <p><button type="button">A page button</button></p>
+    <p>Last change: <output id="log">none</output></p>
+    <script>
+      document.addEventListener('toggle-change', (event) => {
+        const label = event.target.firstChild.textContent.trim()
+        document.getElementById('log').value = `${label}: ${event.detail.pressed}`
+      })
+    </script>
+  </body>
+</html>

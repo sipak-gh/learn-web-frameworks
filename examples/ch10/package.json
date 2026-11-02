@@ -1,0 +1,19 @@
+{
+  "name": "ch10-minimalists-examples",
+  "private": true,
+  "type": "module",
+  "description": "Mithril and VanJS exercises, served from disk and checked in headless Chromium",
+  "scripts": {
+    "verify": "node verify.mjs",
+    "measure": "node measure.mjs"
+  },
+  "dependencies": {
+    "mithril": "2.3.8",
+    "vanjs-core": "1.6.2",
+    "vanjs-ext": "0.6.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "esbuild": "0.28.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "../../../tasklet/angular/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out",
+    "rootDir": "../../../tasklet/angular/src/app",
+    "declaration": false,
+    "importHelpers": false,
+    "types": []
+  },
+  "files": ["../../../tasklet/angular/src/app/task-item/task-item.ts"],
+  "references": []
+}

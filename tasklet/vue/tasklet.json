@@ -1,0 +1,8 @@
+{
+  "name": "Vue",
+  "port": 4303,
+  "build": "npm run build",
+  "serve": "npm run preview",
+  "persistence": "localStorage",
+  "skip": []
+}

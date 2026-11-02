@@ -1,0 +1,70 @@
+--- a/tasklet/alpine/package.json
++++ b/tasklet/alpine/package.json
+@@ -9,6 +9,7 @@
+     "preview": "vite preview --port 4313 --strictPort"
+   },
+   "dependencies": {
++    "@alpinejs/persist": "3.17.5",
+     "alpinejs": "3.17.5"
+   },
+   "devDependencies": {
+--- a/tasklet/alpine/src/main.js
++++ b/tasklet/alpine/src/main.js
+@@ -1,19 +1,13 @@
+ import Alpine from 'alpinejs'
++import persist from '@alpinejs/persist'
+ import { filterBar, taskForm, taskItem } from './components.js'
+-import { saveTasks } from './storage.js'
+ import { tasklet } from './store.js'
+ import './tasklet.css'
+ 
+-Alpine.store('tasklet', tasklet)
++Alpine.plugin(persist)
++Alpine.store('tasklet', tasklet())
+ Alpine.data('taskForm', taskForm)
+ Alpine.data('filterBar', filterBar)
+ Alpine.data('taskItem', taskItem)
+ 
+-// Re-runs whenever anything it read changes. saveTasks() stringifies the
+-// whole list, so it reads (and so depends on) every task's every field.
+-const store = Alpine.store('tasklet')
+-Alpine.effect(() => {
+-  if (store.ready) saveTasks(store.tasks)
+-})
+-
+ Alpine.start()
+--- a/tasklet/alpine/src/store.js
++++ b/tasklet/alpine/src/store.js
+@@ -1,11 +1,12 @@
+-import { fetchTasks, loadSavedTasks } from './storage.js'
++import Alpine from 'alpinejs'
++import { fetchTasks } from './storage.js'
+ import { countLabel, visibleTasks } from './tasks.js'
+ 
+ // The app's state, shared by every component as $store.tasklet. Alpine wraps
+ // this object in a reactive proxy, so the methods simply mutate it.
+-export const tasklet = {
++export const tasklet = () => ({
+   status: 'loading',
+-  tasks: [],
++  tasks: Alpine.$persist([]).as('tasklet:v1'),
+   filter: 'all',
+ 
+   get ready() {
+@@ -22,9 +23,7 @@
+   },
+ 
+   start() {
+-    const saved = loadSavedTasks()
+-    if (saved) {
+-      this.tasks = saved
++    if (this.tasks.length > 0) {
+       this.status = 'ready'
+     } else {
+       this.load()
+@@ -53,4 +52,4 @@
+   clearDone() {
+     this.tasks = this.tasks.filter((task) => !task.done)
+   },
+-}
++})

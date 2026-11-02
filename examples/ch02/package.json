@@ -1,0 +1,22 @@
+{
+  "name": "ch02-history-examples",
+  "private": true,
+  "description": "The same tiny list in jQuery, Backbone, Knockout, AngularJS and React (createClass and hooks)",
+  "scripts": {
+    "build": "esbuild react-15.jsx --outfile=build/react-15.js && esbuild react-19.jsx --bundle --minify --jsx=automatic --define:process.env.NODE_ENV='\"production\"' --outfile=build/react-19.js"
+  },
+  "dependencies": {
+    "angular": "1.8.3",
+    "backbone": "1.6.1",
+    "jquery": "4.0.0",
+    "knockout": "3.5.3",
+    "react": "19.3.1",
+    "react-15": "npm:react@15.4.2",
+    "react-dom": "19.3.1",
+    "react-dom-15": "npm:react-dom@15.4.2",
+    "underscore": "1.13.8"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

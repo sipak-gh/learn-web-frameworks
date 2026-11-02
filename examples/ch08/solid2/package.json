@@ -1,0 +1,11 @@
+{
+  "name": "ch08-solid2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "batching": "node --conditions=browser batching.mjs"
+  },
+  "dependencies": {
+    "solid-js": "2.0.0-rc.20"
+  }
+}

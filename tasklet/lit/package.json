@@ -1,0 +1,19 @@
+{
+  "name": "tasklet-lit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4311 --strictPort",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 4311 --strictPort"
+  },
+  "dependencies": {
+    "@lit/task": "1.0.3",
+    "lit": "3.3.3"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

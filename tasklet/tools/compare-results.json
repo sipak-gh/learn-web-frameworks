@@ -1,0 +1,460 @@
+{
+  "date": "2026-11-02T17:18:40.105Z",
+  "node": "v26.13.0",
+  "platform": "linux x64",
+  "runs": 3,
+  "results": [
+    {
+      "app": "vanilla",
+      "name": "Vanilla TypeScript",
+      "version": "—",
+      "build": {
+        "runs": [
+          0.4,
+          0.37,
+          0.38
+        ],
+        "median": 0.38
+      },
+      "size": {
+        "measured": "vanilla/dist",
+        "files": 3,
+        "raw": 7119,
+        "gzip": 3158,
+        "jsGzip": 1926,
+        "largest": "assets/index-DetuhChd.js"
+      },
+      "source": {
+        "files": 8,
+        "lines": 309,
+        "list": [
+          "src/app.ts",
+          "src/dom.ts",
+          "src/filterBar.ts",
+          "src/main.ts",
+          "src/storage.ts",
+          "src/taskForm.ts",
+          "src/taskItem.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "react",
+      "name": "React",
+      "version": "19.3.1",
+      "build": {
+        "runs": [
+          0.39,
+          0.38,
+          0.37
+        ],
+        "median": 0.38
+      },
+      "size": {
+        "measured": "react/dist",
+        "files": 3,
+        "raw": 225507,
+        "gzip": 70144,
+        "jsGzip": 68916,
+        "largest": "assets/index-DhuhZyYo.js"
+      },
+      "source": {
+        "files": 7,
+        "lines": 249,
+        "list": [
+          "src/App.tsx",
+          "src/components/FilterBar.tsx",
+          "src/components/TaskForm.tsx",
+          "src/components/TaskItem.tsx",
+          "src/main.tsx",
+          "src/storage.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "vue",
+      "name": "Vue",
+      "version": "3.5.44",
+      "build": {
+        "runs": [
+          1.29,
+          1.2,
+          1.25
+        ],
+        "median": 1.25
+      },
+      "size": {
+        "measured": "vue/dist",
+        "files": 3,
+        "raw": 72340,
+        "gzip": 28367,
+        "jsGzip": 27137,
+        "largest": "assets/index-Cx1SdNI3.js"
+      },
+      "source": {
+        "files": 7,
+        "lines": 207,
+        "list": [
+          "src/App.vue",
+          "src/components/FilterBar.vue",
+          "src/components/TaskForm.vue",
+          "src/components/TaskItem.vue",
+          "src/main.ts",
+          "src/storage.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "svelte",
+      "name": "Svelte",
+      "version": "5.57.3",
+      "build": {
+        "runs": [
+          1.92,
+          1.88,
+          1.87
+        ],
+        "median": 1.88
+      },
+      "size": {
+        "measured": "svelte/dist",
+        "files": 3,
+        "raw": 45267,
+        "gzip": 17762,
+        "jsGzip": 16533,
+        "largest": "assets/index-CUMpr2XS.js"
+      },
+      "source": {
+        "files": 7,
+        "lines": 194,
+        "list": [
+          "src/App.svelte",
+          "src/components/FilterBar.svelte",
+          "src/components/TaskForm.svelte",
+          "src/components/TaskItem.svelte",
+          "src/main.ts",
+          "src/storage.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "angular",
+      "name": "Angular",
+      "version": "22.2.4",
+      "build": {
+        "runs": [
+          1.5,
+          1.51,
+          1.54
+        ],
+        "median": 1.51
+      },
+      "size": {
+        "measured": "angular/dist/angular/browser",
+        "files": 3,
+        "raw": 241198,
+        "gzip": 76965,
+        "jsGzip": 75314,
+        "largest": "main-QDZ4Y4UK.js"
+      },
+      "source": {
+        "files": 13,
+        "lines": 263,
+        "list": [
+          "src/app/app.config.ts",
+          "src/app/app.html",
+          "src/app/app.ts",
+          "src/app/filter-bar/filter-bar.html",
+          "src/app/filter-bar/filter-bar.ts",
+          "src/app/storage.ts",
+          "src/app/task-form/task-form.html",
+          "src/app/task-form/task-form.ts",
+          "src/app/task-item/task-item.html",
+          "src/app/task-item/task-item.ts",
+          "src/app/task-store.ts",
+          "src/app/tasks.ts",
+          "src/main.ts"
+        ]
+      }
+    },
+    {
+      "app": "solid",
+      "name": "Solid",
+      "version": "1.9.18",
+      "build": {
+        "runs": [
+          2.17,
+          2.13,
+          2.18
+        ],
+        "median": 2.17
+      },
+      "size": {
+        "measured": "solid/dist",
+        "files": 3,
+        "raw": 26438,
+        "gzip": 10366,
+        "jsGzip": 9105,
+        "largest": "assets/index-Bn4w6B8B.js"
+      },
+      "source": {
+        "files": 8,
+        "lines": 262,
+        "list": [
+          "src/App.tsx",
+          "src/components/FilterBar.tsx",
+          "src/components/TaskForm.tsx",
+          "src/components/TaskItem.tsx",
+          "src/index.tsx",
+          "src/storage.ts",
+          "src/taskStore.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "preact",
+      "name": "Preact",
+      "version": "11.1.1",
+      "build": {
+        "runs": [
+          0.43,
+          0.4,
+          0.4
+        ],
+        "median": 0.4
+      },
+      "size": {
+        "measured": "preact/dist",
+        "files": 3,
+        "raw": 29600,
+        "gzip": 11737,
+        "jsGzip": 10503,
+        "largest": "assets/index-D_uV-bqT.js"
+      },
+      "source": {
+        "files": 8,
+        "lines": 260,
+        "list": [
+          "src/App.tsx",
+          "src/components/FilterBar.tsx",
+          "src/components/TaskForm.tsx",
+          "src/components/TaskItem.tsx",
+          "src/index.tsx",
+          "src/model.ts",
+          "src/storage.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "mithril",
+      "name": "Mithril",
+      "version": "2.3.8",
+      "build": {
+        "runs": [
+          0.23,
+          0.23,
+          0.24
+        ],
+        "median": 0.23
+      },
+      "size": {
+        "measured": "mithril/dist",
+        "files": 3,
+        "raw": 31688,
+        "gzip": 11942,
+        "jsGzip": 10714,
+        "largest": "assets/index-B7foV_Ex.js"
+      },
+      "source": {
+        "files": 7,
+        "lines": 224,
+        "list": [
+          "src/App.js",
+          "src/components/FilterBar.js",
+          "src/components/TaskForm.js",
+          "src/components/TaskItem.js",
+          "src/main.js",
+          "src/storage.js",
+          "src/tasks.js"
+        ]
+      }
+    },
+    {
+      "app": "vanjs",
+      "name": "VanJS",
+      "version": "1.6.2",
+      "build": {
+        "runs": [
+          0.23,
+          0.23,
+          0.22
+        ],
+        "median": 0.23
+      },
+      "size": {
+        "measured": "vanjs/dist",
+        "files": 3,
+        "raw": 11120,
+        "gzip": 4952,
+        "jsGzip": 3723,
+        "largest": "assets/index-CCFa1m7Q.js"
+      },
+      "source": {
+        "files": 7,
+        "lines": 231,
+        "list": [
+          "src/App.js",
+          "src/components/FilterBar.js",
+          "src/components/TaskForm.js",
+          "src/components/TaskItem.js",
+          "src/main.js",
+          "src/storage.js",
+          "src/tasks.js"
+        ]
+      }
+    },
+    {
+      "app": "qwik",
+      "name": "Qwik",
+      "version": "1.20.3",
+      "build": {
+        "runs": [
+          2.6,
+          2.92,
+          3.11
+        ],
+        "median": 2.92
+      },
+      "size": {
+        "measured": "qwik/dist",
+        "files": 35,
+        "raw": 101591,
+        "gzip": 45706,
+        "jsGzip": 41469,
+        "largest": "build/q-BhPbCVFk.js"
+      },
+      "source": {
+        "files": 11,
+        "lines": 428,
+        "list": [
+          "src/components/app.tsx",
+          "src/components/filter-bar.tsx",
+          "src/components/router-head/router-head.tsx",
+          "src/components/task-form.tsx",
+          "src/components/task-item.tsx",
+          "src/entry.dev.tsx",
+          "src/entry.ssr.tsx",
+          "src/root.tsx",
+          "src/routes/index.tsx",
+          "src/storage.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "lit",
+      "name": "Lit",
+      "version": "3.3.3",
+      "build": {
+        "runs": [
+          0.3,
+          0.3,
+          0.3
+        ],
+        "median": 0.3
+      },
+      "size": {
+        "measured": "lit/dist",
+        "files": 2,
+        "raw": 28371,
+        "gzip": 10638,
+        "jsGzip": 10400,
+        "largest": "assets/index-H8KOMvHv.js"
+      },
+      "source": {
+        "files": 8,
+        "lines": 323,
+        "list": [
+          "src/components/filter-bar.ts",
+          "src/components/task-form.ts",
+          "src/components/task-item.ts",
+          "src/main.ts",
+          "src/storage.ts",
+          "src/styles.ts",
+          "src/tasklet-app.ts",
+          "src/tasks.ts"
+        ]
+      }
+    },
+    {
+      "app": "htmx",
+      "name": "htmx",
+      "version": "2.0.11",
+      "build": {
+        "runs": [
+          0.15,
+          0.15,
+          0.16
+        ],
+        "median": 0.15
+      },
+      "size": {
+        "measured": "GET http://localhost:4312/ + linked assets",
+        "files": 3,
+        "raw": 58987,
+        "gzip": 19091,
+        "jsGzip": 16882,
+        "largest": "htmx.min.js"
+      },
+      "source": {
+        "files": 4,
+        "lines": 345,
+        "list": [
+          "src/html.ts",
+          "src/server.ts",
+          "src/tasks.ts",
+          "src/views.ts"
+        ]
+      }
+    },
+    {
+      "app": "alpine",
+      "name": "Alpine.js",
+      "version": "3.17.5",
+      "build": {
+        "runs": [
+          0.25,
+          0.24,
+          0.24
+        ],
+        "median": 0.24
+      },
+      "size": {
+        "measured": "alpine/dist",
+        "files": 3,
+        "raw": 61908,
+        "gzip": 21823,
+        "jsGzip": 19865,
+        "largest": "assets/index-DNaMWPmo.js"
+      },
+      "source": {
+        "files": 6,
+        "lines": 239,
+        "list": [
+          "index.html",
+          "src/components.js",
+          "src/main.js",
+          "src/storage.js",
+          "src/store.js",
+          "src/tasks.js"
+        ]
+      }
+    }
+  ]
+}
